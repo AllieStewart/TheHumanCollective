@@ -1,0 +1,35 @@
+{
+  "name": "thehumancollective",
+  "version": "1.0.0",
+  "description": "A website about humans collectively describing their experiences in various locales around the world.",
+  "main": "server/server.js",
+  "engines": {
+    "node": "18.18.1",
+    "npm": "9.8.1"
+  },
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "concurrently \"cd server && npm run watch\" \"cd client && npm run dev\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build",
+    "postinstall": "cd client && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AllieStewart/TheHumanCollective.git"
+  },
+  "keywords": [
+    "human",
+    "collective",
+    "allie",
+    "stewart",
+    "mern"
+  ],
+  "author": "Allie Stewart",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AllieStewart/TheHumanCollective/issues"
+  },
+  "homepage": "https://github.com/AllieStewart/TheHumanCollective#readme"
+}
