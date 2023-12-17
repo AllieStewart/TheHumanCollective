@@ -40,5 +40,9 @@ Link to the website: --- </br>
 ## Credits
 Made by Allie Stewart. </br>
 
+SVG logo from https://www.svgrepo.com/svg/280297/world-heart. </br>
+
+Color palette for CSS from https://coolors.co. </br>
+
 ## Licenses
 Please refer to the LICENSE in the repository. </br>
