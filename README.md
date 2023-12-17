@@ -1,7 +1,17 @@
 # TheHumanCollective
 
 ## Badge
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![License: MIT](https://img.shields.io/badge/Version-1.0-red.svg)
+![License: MIT](https://img.shields.io/badge/MongoDB-green.svg)
+![License: MIT](https://img.shields.io/badge/Express.js-grey.svg)
+![License: MIT](https://img.shields.io/badge/React-blue.svg)
+![License: MIT](https://img.shields.io/badge/Node.js-grey.svg)
+![License: MIT](https://img.shields.io/badge/Heroku-purple.svg)
+![License: MIT](https://img.shields.io/badge/Javascript-yellow.svg)
+![License: MIT](https://img.shields.io/badge/CSS-blue.svg)
+![License: MIT](https://img.shields.io/badge/GoogleAPI-yellow.svg)
+![License: MIT](https://img.shields.io/badge/Vite-blue.svg)
 </br>
 
 ## Table of Contents
