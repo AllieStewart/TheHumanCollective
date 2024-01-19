@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/AllieStewart/TheHumanCollective/issues"
   },
-  "homepage": "https://github.com/AllieStewart/TheHumanCollective#readme"
+  "homepage": "https://github.com/AllieStewart/TheHumanCollective#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
 }

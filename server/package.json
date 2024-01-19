@@ -1,7 +1,7 @@
 {
     "name": "mern-server",
     "version": "1.0.0",
-    "description": "",
+    "description": "Server-side package for TheHumanCollective.",
     "main": "server.js",
     "scripts": {
       "start": "node server.js",
@@ -9,7 +9,7 @@
       "seed": "node seeders/seed.js"
     },
     "keywords": [],
-    "author": "",
+    "author": "Allie Stewart",
     "license": "MIT",
     "dependencies": {
       "@apollo/server": "^4.7.1",
