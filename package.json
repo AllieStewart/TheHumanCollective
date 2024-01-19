@@ -1,7 +1,7 @@
 {
   "name": "thehumancollective",
   "version": "1.0.0",
-  "description": "A website about humans collectively describing their experiences in various locales around the world.",
+  "description": "A website about humans collectively describing their experiences in various locales around the world",
   "main": "server/server.js",
   "engines": {
     "node": "18.18.1",

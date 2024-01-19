@@ -1,7 +1,7 @@
 {
     "name": "mern-server",
     "version": "1.0.0",
-    "description": "Server-side package for TheHumanCollective.",
+    "description": "Server-side package for TheHumanCollective",
     "main": "server.js",
     "scripts": {
       "start": "node server.js",
