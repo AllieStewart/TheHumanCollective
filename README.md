@@ -1,6 +1,6 @@
 # TheHumanCollective
 
-## Badge
+## Badges
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![License: MIT](https://img.shields.io/badge/Version-1.0-red.svg)
 ![License: MIT](https://img.shields.io/badge/MongoDB-green.svg)
