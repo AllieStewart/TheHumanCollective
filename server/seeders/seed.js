@@ -2,17 +2,33 @@
 // Seed file to create collections in MongoDB,
 // based off of models and <model>Seeds.json files.
 const db = require('../config/connection');
-const { User } = require('../models');
+const { User, Log } = require('../models');
 const userSeeds = require('./userSeeds.json');
 const cleanDB = require('./cleanDB');
 
 db.once('open', async () => {
-    await cleanDB('User', 'users');
+  try{
+  await cleanDB('Log', 'logs');
 
-    await User.create(userSeeds);
+  await cleanDB('User', 'users');
 
-    // try, catch at start
-    // connect User to log/comment?
+  await User.create(userSeeds);
+
+  for (let i = 0; i < logSeeds.length; i++) {
+    const { _id, logAuthor } = await Log.create(logSeeds[i]);
+    const user = await User.findOneAndUpdate(
+      { username: logAuthor },
+      {
+        $addToSet: {
+          logs: _id,
+        },
+      }
+    );
+  }
+} catch (err) {
+  console.error(err);
+  process.exit(1);
+}
 
   console.log('all done!');
   process.exit(0);

@@ -7,10 +7,23 @@ const typeDefs = `
     username: String
     email: String
     password: String
-    posts: [Post]!
+    logs: [Log]!
   }
 
-  # Log/Comment?
+  type Log {
+    _id: ID
+    logText: String
+    logAuthor: String
+    createdAt: String
+    comments: [Comment]!
+  }
+
+  type Comment {
+    _id: ID
+    commentText: String
+    commentAuthor: String
+    createdAt: String
+  }
 
   # Authentication
   type Auth {
@@ -22,8 +35,8 @@ const typeDefs = `
   type Query {
     users: [User]
     user(username: String!): User
-    posts(username: String): [Post]
-    post(postId: ID!): Post
+    logs(username: String): [Log]
+    log(logId: ID!): Log
     me: User
   }
 
@@ -31,6 +44,10 @@ const typeDefs = `
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addLog(postText: String!): Log
+    addComment(postId: ID!, commentText: String!): Log
+    removeLog(postId: ID!): Log
+    removeComment(postId: ID!, commentId: ID!): Log
   }
 `;
 

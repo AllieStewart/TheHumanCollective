@@ -1,7 +1,7 @@
 // Start of JS file
 // Model exports configured here.
 const User = require('./User');
-// Figure out other models needed
-module.exports = { User };
+const Log = require('./Log');
 
+module.exports = { User, Log };
 // End of JS file
