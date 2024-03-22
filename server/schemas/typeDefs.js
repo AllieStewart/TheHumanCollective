@@ -44,10 +44,11 @@ const typeDefs = `
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addLog(postText: String!): Log
-    addComment(postId: ID!, commentText: String!): Log
-    removeLog(postId: ID!): Log
-    removeComment(postId: ID!, commentId: ID!): Log
+    addLog(logText: String!): Log
+    addComment(logId: ID!, commentText: String!): Log
+    removeLog(logId: ID!): Log
+    removeComment(logId: ID!, commentId: ID!): Log
+    searchHistory(): 
   }
 `;
 

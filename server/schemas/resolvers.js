@@ -118,6 +118,9 @@ const resolvers = {
             }
             throw AuthenticationError;
           },
+          searchHistory: async (parent, { }, context) => {
+
+          },
     },
 };
 
