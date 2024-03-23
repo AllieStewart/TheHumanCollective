@@ -8,9 +8,51 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      posts POST{
+      logs LOG{
         _id
-        postText
+        logText
+        createdAt
+      }
+    }
+  }
+`;
+
+export const QUERY_USERS = gql`
+  query users {
+    users {
+      _id
+      username
+      email
+      logs {
+        _id
+        logText
+      }
+    }
+  }
+`;
+// query logs($username: String)
+export const QUERY_LOGS = gql`
+  query getThoughts {
+    logs (username: $username) {
+      _id
+      logText
+      logAuthor
+      createdAt
+    }
+  }
+`;
+// query log($logId: ID!)
+export const QUERY_SINGLE_LOG = gql`
+  query getSingleThought($logId: ID!) {
+    log(logId: $logId) {
+      _id
+      logText
+      logAuthor
+      createdAt
+      comments {
+        _id
+        commentText
+        commentAuthor
         createdAt
       }
     }
@@ -23,10 +65,10 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      posts {
+      logs {
         _id
-        postText
-        postAuthor
+        logText
+        logAuthor
         createdAt
       }
     }

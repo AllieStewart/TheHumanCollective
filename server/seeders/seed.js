@@ -5,12 +5,12 @@ const db = require('../config/connection');
 const { User, Log } = require('../models');
 const userSeeds = require('./userSeeds.json');
 const logSeeds = require('./logSeeds.json');
-const geoSeeds = require('./geoSeeds.json');
+//const geoSeeds = require('./geoSeeds.json');
 const cleanDB = require('./cleanDB');
 
 db.once('open', async () => {
   try{
-  await cleanDB('Geolocation', 'geolocations')
+  //await cleanDB('Geolocation', 'geolocations')
   
   await cleanDB('Log', 'logs');
 
