@@ -1,7 +1,52 @@
 [
     {
-        "username": "",
-        "email": "",
-        "password": ""
+        "username": "Alice Malice",
+        "email": "almal56@yahoo.com",
+        "password": "password01"
+    },
+    {
+        "username": "MadLadGad",
+        "email": "mlg1001@gmail.com",
+        "password": "password02"
+    },
+    {
+        "username": "John Stanley",
+        "email": "johnstanley@yahoo.com",
+        "password": "password03"
+    },
+    {
+        "username": "BirdWord154",
+        "email": "birdbird154@gmail.com",
+        "password": "password04"
+    },
+    {
+        "username": "DontMessWithJess",
+        "email": "jessica189@yahoo.com",
+        "password": "password05"
+    },
+    {
+        "username": "BlueGuy86",
+        "email": "guybluedabadee@outlook.com",
+        "password": "password06"
+    },
+    {
+        "username": "Pam Fumerton",
+        "email": "pfumerton@yahoo.com",
+        "password": "password07"
+    },
+    {
+        "username": "PatrickStarFish",
+        "email": "starfisher4@gmail.com",
+        "password": "password08"
+    },
+    {
+        "username": "DonDonTheDon",
+        "email": "thedon@gmail.com",
+        "password": "password09"
+    },
+    {
+        "username": "xLadyZedx",
+        "email": "ladyzed@outlook.com",
+        "password": "password10"
     }
 ]

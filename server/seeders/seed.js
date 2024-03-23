@@ -4,16 +4,20 @@
 const db = require('../config/connection');
 const { User, Log } = require('../models');
 const userSeeds = require('./userSeeds.json');
+const logSeeds = require('./logSeeds.json');
+const geoSeeds = require('./geoSeeds.json');
 const cleanDB = require('./cleanDB');
 
 db.once('open', async () => {
   try{
+  await cleanDB('Geolocation', 'geolocations')
+  
   await cleanDB('Log', 'logs');
 
   await cleanDB('User', 'users');
 
   await User.create(userSeeds);
-
+    // need to add geoSeeds down here
   for (let i = 0; i < logSeeds.length; i++) {
     const { _id, logAuthor } = await Log.create(logSeeds[i]);
     const user = await User.findOneAndUpdate(
