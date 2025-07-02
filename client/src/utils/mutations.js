@@ -27,11 +27,19 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_LOG = gql`
-  mutation addLog($logText: String!) {
-    addLog(logText: $logText) {
+  mutation addLog($logText: String!, $geolocation: GeolocationInput) {
+    addLog(logText: $logText, geolocation: $geolocation) {
       _id
       logText
       logAuthor
+      geolocation {
+        countryText
+        stateText
+        cityText
+        latitude
+        longitude
+        placeName
+      }
       createdAt
       comments {
         _id
@@ -80,6 +88,21 @@ export const REMOVE_COMMENT = gql`
         commentAuthor
         createdAt
       }
+    }
+  }
+`;
+
+export const ADD_GEOLOCATION = gql`
+  mutation addGeolocation($countryText: String!, $stateText: String, $cityText: String!, $latitude: Float!, $longitude: Float!, $placeName: String) {
+    addGeolocation(countryText: $countryText, stateText: $stateText, cityText: $cityText, latitude: $latitude, longitude: $longitude, placeName: $placeName) {
+      _id
+      countryText
+      stateText
+      cityText
+      latitude
+      longitude
+      placeName
+      createdAt
     }
   }
 `;

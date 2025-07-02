@@ -1,72 +1,82 @@
 [
     {
-        "countryText": "",
-        "stateText": "",
-        "cityText": "",
-        "latitude": "",
-        "longitude": ""
+        "countryText": "United States",
+        "stateText": "New York",
+        "cityText": "New York",
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "placeName": "New York, NY, USA"
     },
     {
-        "countryText": "",
-        "stateText": "",
-        "cityText": "",
-        "latitude": "",
-        "longitude": ""
+        "countryText": "United Kingdom",
+        "stateText": "England",
+        "cityText": "London",
+        "latitude": 51.5074,
+        "longitude": -0.1278,
+        "placeName": "London, England, UK"
     },
     {
-        "countryText": "",
-        "stateText": "",
-        "cityText": "",
-        "latitude": "",
-        "longitude": ""
+        "countryText": "France",
+        "stateText": "Île-de-France",
+        "cityText": "Paris",
+        "latitude": 48.8566,
+        "longitude": 2.3522,
+        "placeName": "Paris, France"
     },
     {
-        "countryText": "",
-        "stateText": "",
-        "cityText": "",
-        "latitude": "",
-        "longitude": ""
+        "countryText": "Japan",
+        "stateText": "Tokyo",
+        "cityText": "Tokyo",
+        "latitude": 35.6762,
+        "longitude": 139.6503,
+        "placeName": "Tokyo, Japan"
     },
     {
-        "countryText": "",
-        "stateText": "",
-        "cityText": "",
-        "latitude": "",
-        "longitude": ""
+        "countryText": "Australia",
+        "stateText": "New South Wales",
+        "cityText": "Sydney",
+        "latitude": -33.8688,
+        "longitude": 151.2093,
+        "placeName": "Sydney, NSW, Australia"
     },
     {
-        "countryText": "",
-        "stateText": "",
-        "cityText": "",
-        "latitude": "",
-        "longitude": ""
+        "countryText": "Brazil",
+        "stateText": "Rio de Janeiro",
+        "cityText": "Rio de Janeiro",
+        "latitude": -22.9068,
+        "longitude": -43.1729,
+        "placeName": "Rio de Janeiro, Brazil"
     },
     {
-        "countryText": "",
-        "stateText": "",
-        "cityText": "",
-        "latitude": "",
-        "longitude": ""
+        "countryText": "Egypt",
+        "stateText": "Cairo Governorate",
+        "cityText": "Cairo",
+        "latitude": 30.0444,
+        "longitude": 31.2357,
+        "placeName": "Cairo, Egypt"
     },
     {
-        "countryText": "",
-        "stateText": "",
-        "cityText": "",
-        "latitude": "",
-        "longitude": ""
+        "countryText": "India",
+        "stateText": "Maharashtra",
+        "cityText": "Mumbai",
+        "latitude": 19.0760,
+        "longitude": 72.8777,
+        "placeName": "Mumbai, Maharashtra, India"
     },
     {
-        "countryText": "",
-        "stateText": "",
-        "cityText": "",
-        "latitude": "",
-        "longitude": ""
+        "countryText": "South Africa",
+        "stateText": "Western Cape",
+        "cityText": "Cape Town",
+        "latitude": -33.9249,
+        "longitude": 18.4241,
+        "placeName": "Cape Town, South Africa"
     },
     {
-        "countryText": "",
-        "stateText": "",
-        "cityText": "",
-        "latitude": "",
-        "longitude": ""
+        "countryText": "Canada",
+        "stateText": "British Columbia",
+        "cityText": "Vancouver",
+        "latitude": 49.2827,
+        "longitude": -123.1207,
+        "placeName": "Vancouver, BC, Canada"
     }
 ]

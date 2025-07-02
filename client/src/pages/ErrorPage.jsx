@@ -1,3 +1,5 @@
+// Start of JSX file
+// Error page, in case of an unexpected issue with connection.
 import { useRouteError } from "react-router-dom";
 
 export default function ErrorPage() {
@@ -14,3 +16,4 @@ export default function ErrorPage() {
     </div>
   );
 }
+// End of JSX file

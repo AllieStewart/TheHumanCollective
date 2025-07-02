@@ -2,39 +2,44 @@
 // Seed file to create collections in MongoDB,
 // based off of models and <model>Seeds.json files.
 const db = require('../config/connection');
-const { User, Log } = require('../models');
+const { User, Log, Geolocation } = require('../models');
 const userSeeds = require('./userSeeds.json');
 const logSeeds = require('./logSeeds.json');
-//const geoSeeds = require('./geoSeeds.json');
+const geoSeeds = require('./geoSeeds.json');
 const cleanDB = require('./cleanDB');
 
 db.once('open', async () => {
-  try{
-  //await cleanDB('Geolocation', 'geolocations')
-  
-  await cleanDB('Log', 'logs');
+  try {
+    // Clean existing data
+    await cleanDB('Geolocation', 'geolocations');
+    await cleanDB('Log', 'logs');
+    await cleanDB('User', 'users');
 
-  await cleanDB('User', 'users');
-
-  await User.create(userSeeds);
-    // need to add geoSeeds down here
-  for (let i = 0; i < logSeeds.length; i++) {
-    const { _id, logAuthor } = await Log.create(logSeeds[i]);
-    const user = await User.findOneAndUpdate(
-      { username: logAuthor },
-      {
-        $addToSet: {
-          logs: _id,
-        },
-      }
-    );
+    // Create users
+    await User.create(userSeeds);
+    
+    // Create geolocations
+    await Geolocation.create(geoSeeds);
+    console.log('Geolocations seeded!');
+    
+    // Create logs and associate with users
+    for (let i = 0; i < logSeeds.length; i++) {
+      const { _id, logAuthor } = await Log.create(logSeeds[i]);
+      const user = await User.findOneAndUpdate(
+        { username: logAuthor },
+        {
+          $addToSet: {
+            logs: _id,
+          },
+        }
+      );
+    }
+  } catch (err) {
+    console.error(err);
+    process.exit(1);
   }
-} catch (err) {
-  console.error(err);
-  process.exit(1);
-}
 
-  console.log('all done!');
+  console.log('All seeding completed successfully!');
   process.exit(0);
 });
 // End of JS file

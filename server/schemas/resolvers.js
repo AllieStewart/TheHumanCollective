@@ -1,12 +1,10 @@
 // Start of JS file
 // Resolvers for models, through Query and Mutation definitions.
-const { User, Log } = require('../models');
+const { User, Log, Geolocation } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
-// Connect API(s) functions here
 
 const resolvers = {
     Query: {
-        // API function returned here
         users: async () => {
             return User.find().populate('logs');
         },
@@ -14,12 +12,18 @@ const resolvers = {
             return User.findOne({ username }).populate('logs');
         },
         logs: async (parent, { username }) => {
-            const params = username ? { username } : {};
+            const params = username ? { logAuthor: username } : {};
             return Log.find(params).sort({ createdAt: -1 });
-          },
+        },
         log: async (parent, { logId }) => {
             return Log.findOne({ _id: logId });
-          },
+        },
+        geolocations: async () => {
+            return Geolocation.find().sort({ createdAt: -1 });
+        },
+        geolocation: async (parent, { geoId }) => {
+            return Geolocation.findOne({ _id: geoId });
+        },
         me: async (parent, args, context) => {
             if (context.user) {
               return User.findOne({ _id: context.user._id }).populate('logs');
@@ -42,33 +46,34 @@ const resolvers = {
             }
       
             const correctPw = await user.isCorrectPassword(password);
-      
             if (!correctPw) {
               throw AuthenticationError;
             }
-      
+
             const token = signToken(user);
-      
             return { token, user };
         },
-        addLog: async (parent, { logText }, context) => {
+        addLog: async (parent, { logText, geolocation }, context) => {
             if (context.user) {
-              const log = await Log.create({
+              const logData = {
                 logText,
                 logAuthor: context.user.username,
-              });
-      
+              };
+
+              if (geolocation) {
+                logData.geolocation = geolocation;
+              }
+              
+              const log = await Log.create(logData);
               await User.findOneAndUpdate(
                 { _id: context.user._id },
                 { $addToSet: { logs: log._id } }
               );
-      
               return log;
             }
             throw AuthenticationError;
-            ('You need to be logged in!');
-          },
-          addComment: async (parent, { logId, commentText }, context) => {
+        },
+        addComment: async (parent, { logId, commentText }, context) => {
             if (context.user) {
               return Log.findOneAndUpdate(
                 { _id: logId },
@@ -84,8 +89,22 @@ const resolvers = {
               );
             }
             throw AuthenticationError;
-          },
-          removeLog: async (parent, { logId }, context) => {
+        },
+        addGeolocation: async (parent, { countryText, stateText, cityText, latitude, longitude, placeName }, context) => {
+            if (context.user) {
+              const geolocation = await Geolocation.create({
+                countryText,
+                stateText,
+                cityText,
+                latitude,
+                longitude,
+                placeName,
+              });
+              return geolocation;
+            }
+            throw AuthenticationError;
+        },
+        removeLog: async (parent, { logId }, context) => {
             if (context.user) {
               const log = await Log.findOneAndDelete({
                 _id: logId,
@@ -100,8 +119,8 @@ const resolvers = {
               return log;
             }
             throw AuthenticationError;
-          },
-          removeComment: async (parent, { logId, commentId }, context) => {
+        },
+        removeComment: async (parent, { logId, commentId }, context) => {
             if (context.user) {
               return Log.findOneAndUpdate(
                 { _id: logId },
@@ -117,12 +136,11 @@ const resolvers = {
               );
             }
             throw AuthenticationError;
-          },
-          //searchHistory: async (parent, { }, context) => {
-
-          //},
+        },
     },
 };
+
+// searchHistory: async (parent, { logId }, context) => {}
 
 module.exports = resolvers;
 // End of JS file

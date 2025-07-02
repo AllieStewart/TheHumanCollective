@@ -16,6 +16,40 @@ const logSchema = new Schema({
     required: true,
     trim: true,
   },
+  geolocation: {
+    countryText: {
+      type: String,
+      required: false,
+      trim: true,
+    },
+    stateText: {
+      type: String,
+      required: false,
+      trim: true,
+    },
+    cityText: {
+      type: String,
+      required: false,
+      trim: true,
+    },
+    latitude: {
+      type: Number,
+      required: false,
+      min: -90,
+      max: 90,
+    },
+    longitude: {
+      type: Number,
+      required: false,
+      min: -180,
+      max: 180,
+    },
+    placeName: {
+      type: String,
+      required: false,
+      trim: true,
+    }
+  },
   createdAt: {
     type: Date,
     default: Date.now,

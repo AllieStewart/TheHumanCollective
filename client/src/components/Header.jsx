@@ -14,7 +14,7 @@ const Header = () => {
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
-              <img src="../rizz_logo.png" height="120" width="450"/>
+              <img src="../logo.png" height="120" width="450"/>
           </Link>
         </div>
         <div>

@@ -11,7 +11,7 @@ const geolocationSchema = new Schema({
     },
     stateText: {
         type: String,
-        required: true,
+        required: false,
         trim: true,
     },
     cityText: {
@@ -20,16 +20,23 @@ const geolocationSchema = new Schema({
         trim: true,
     },
     latitude: {
-        type: String,
+        type: Number,
         required: true,
-        trim: true,
+        min: -90,
+        max: 90,
     },
     longitude: {
-        type: String,
+        type: Number,
         required: true,
+        min: -180,
+        max: 180,
+    },
+    placeName: {
+        type: String,
+        required: false,
         trim: true,
     },
-    timezone: {
+    createdAt: {
         type: Date,
         default: Date.now,
         get: (timestamp) => dateFormat(timestamp),

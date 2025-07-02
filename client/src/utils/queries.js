@@ -8,9 +8,17 @@ export const QUERY_USER = gql`
       _id
       username
       email
-      logs LOG{
+      logs {
         _id
         logText
+        geolocation {
+          countryText
+          stateText
+          cityText
+          latitude
+          longitude
+          placeName
+        }
         createdAt
       }
     }
@@ -26,28 +34,58 @@ export const QUERY_USERS = gql`
       logs {
         _id
         logText
+        geolocation {
+          countryText
+          stateText
+          cityText
+          latitude
+          longitude
+          placeName
+        }
       }
     }
   }
 `;
-// query logs($username: String)
+
 export const QUERY_LOGS = gql`
-  query getLogs {
-    logs (username: $username) {
+  query getLogs($username: String) {
+    logs(username: $username) {
       _id
       logText
       logAuthor
+      geolocation {
+        countryText
+        stateText
+        cityText
+        latitude
+        longitude
+        placeName
+      }
       createdAt
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
     }
   }
 `;
-// query log($logId: ID!)
+
 export const QUERY_SINGLE_LOG = gql`
   query getSingleLog($logId: ID!) {
     log(logId: $logId) {
       _id
       logText
       logAuthor
+      geolocation {
+        countryText
+        stateText
+        cityText
+        latitude
+        longitude
+        placeName
+      }
       createdAt
       comments {
         _id
@@ -69,8 +107,46 @@ export const QUERY_ME = gql`
         _id
         logText
         logAuthor
+        geolocation {
+          countryText
+          stateText
+          cityText
+          latitude
+          longitude
+          placeName
+        }
         createdAt
       }
+    }
+  }
+`;
+
+export const QUERY_GEOLOCATIONS = gql`
+  query getGeolocations {
+    geolocations {
+      _id
+      countryText
+      stateText
+      cityText
+      latitude
+      longitude
+      placeName
+      createdAt
+    }
+  }
+`;
+
+export const QUERY_SINGLE_GEOLOCATION = gql`
+  query getSingleGeolocation($geoId: ID!) {
+    geolocation(geoId: $geoId) {
+      _id
+      countryText
+      stateText
+      cityText
+      latitude
+      longitude
+      placeName
+      createdAt
     }
   }
 `;

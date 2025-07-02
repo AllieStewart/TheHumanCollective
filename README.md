@@ -24,7 +24,7 @@
 </br>
 
 ## Description
-A MERN-based idea, utilizing Google API(s), for a website that saves users' </br>
+A MERN-based idea, utilizing world map API(s), for a website that saves users' </br>
 travel/living experiences from various cities around the world. </br>
 
 ## Screenshots
