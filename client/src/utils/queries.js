@@ -1,6 +1,6 @@
 // Start of JS file
-import { gql } from '@apollo/client';
 // Define query functions here for GraphQL
+import { gql } from '@apollo/client';
 
 export const QUERY_USER = gql`
   query user($username: String!) {
@@ -32,7 +32,7 @@ export const QUERY_USERS = gql`
 `;
 // query logs($username: String)
 export const QUERY_LOGS = gql`
-  query getThoughts {
+  query getLogs {
     logs (username: $username) {
       _id
       logText
@@ -43,7 +43,7 @@ export const QUERY_LOGS = gql`
 `;
 // query log($logId: ID!)
 export const QUERY_SINGLE_LOG = gql`
-  query getSingleThought($logId: ID!) {
+  query getSingleLog($logId: ID!) {
     log(logId: $logId) {
       _id
       logText

@@ -47,10 +47,10 @@ const typeDefs = `
     addLog(logText: String!): Log
     addComment(logId: ID!, commentText: String!): Log
     removeLog(logId: ID!): Log
-    removeComment(logId: ID!, commentId: ID!): Log
-    searchHistory(): 
+    removeComment(logId: ID!, commentId: ID!): Log 
   }
 `;
+//searchHistory(): for Mutation
 
 module.exports = typeDefs;
 // End of JS file

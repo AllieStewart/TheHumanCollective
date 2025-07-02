@@ -2,7 +2,7 @@
 // Model exports configured here.
 const User = require('./User');
 const Log = require('./Log');
-const Geolocation = require('./Geolocation');
+//const Geolocation = require('./Geolocation');
 
-module.exports = { User, Log, Geolocation };
+module.exports = { User, Log };
 // End of JS file

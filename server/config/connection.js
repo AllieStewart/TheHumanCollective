@@ -2,12 +2,12 @@
 // Config file for connecting to MongoDB
 
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_DB_URI || 'mongodb://127.0.0.1:27017/hc-data');
+mongoose.connect('process.env.MONGO_DB_URI' || 'mongodb://127.0.0.1:27017/hc-data');
 
 const connectDB = async () => {
   try {
-    console.log('Mongo URI: ', process.env.MONGO_DB_URI);
-    await mongoose.connect(process.env.MONGO_DB_URI, {
+    console.log('Mongo URI: ', 'process.env.MONGO_DB_URI');
+    await mongoose.connect('process.env.MONGO_DB_URI', {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });

@@ -1,6 +1,6 @@
 // Start of JS file
+// Define mutations (functions) for GraphQL
 import { gql } from '@apollo/client';
-// Definte mutations (functions) for GraphQL
 
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
@@ -84,11 +84,11 @@ export const REMOVE_COMMENT = gql`
   }
 `;
 
-export const SEARCH_HISTORY = gql`
+/* export const SEARCH_HISTORY = gql`
   mutation searchHistory() {
     searchHistory(){
 
     }
-  }
-`;
+  } */
+//`;
 // End of JS file

@@ -1,5 +1,5 @@
 // Start of JS file
-// Resolvers for models, through Query and Mutation definitions.const { User, Log } = require('../models');
+// Resolvers for models, through Query and Mutation definitions.
 const { User, Log } = require('../models');
 const { signToken, AuthenticationError } = require('../utils/auth');
 // Connect API(s) functions here
@@ -118,9 +118,9 @@ const resolvers = {
             }
             throw AuthenticationError;
           },
-          searchHistory: async (parent, { }, context) => {
+          //searchHistory: async (parent, { }, context) => {
 
-          },
+          //},
     },
 };
 
