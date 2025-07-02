@@ -4,14 +4,14 @@
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from './App.jsx';
+import App from './App';
 import Home from './pages/Home';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import SingleLog from './pages/SingleLog';
 import Profile from './pages/Profile';
 import ErrorPage from './pages/ErrorPage';
-import FAQ from './pages/FAQPage.jsx';
+import FAQ from './pages/FAQPage';
 
 const router = createBrowserRouter([
   {
